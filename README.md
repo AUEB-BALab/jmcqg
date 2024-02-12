@@ -24,7 +24,7 @@ It offers the following facilities.
 
 
 ## Suggestions for developing questions
-If you are an academic teaching a Java course, drop me a note
+If you are an academic teaching a Java course, drop [me](https://www2.dmst.aueb.gr/dds/) a note
 from your academic account with a pointer to the course page and
 your GitHub id, in order to give you access to the 35 questions
 we developed.
