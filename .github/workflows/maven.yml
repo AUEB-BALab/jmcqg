@@ -1,0 +1,28 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@main
+    - name: Set up JDK 21
+      uses: actions/setup-java@main
+      with:
+        java-version: '21'
+        distribution: 'adopt'
+    - name: List classpath
+      run: echo $CLASSPATH
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+    - name: Test with Maven
+      run: mvn test -Dtest_repetitions=10
+    - name: Run question listing
+      run: java -jar target/jmcqg-1.0-SNAPSHOT-jar-with-dependencies.jar -l
